@@ -1,7 +1,7 @@
 # Домашнее задание к занятию "8.2 Работа с Playbook"
 
 Playbook запускает 3 Play:
-1. Install Java
+1. Install Java 
 2. Install Elasticsearch
 3. Install Kibana
 
