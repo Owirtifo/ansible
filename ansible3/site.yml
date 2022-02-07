@@ -8,20 +8,21 @@
         name: elasticsearch
         state: restarted
   tasks:
-    - name: "Download Elasticsearch's rpm"
+    - name: "Download Elasticsearch's deb"
       get_url:
-        url: "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{ elk_stack_version }}-x86_64.rpm"
-        dest: "/tmp/elasticsearch-{{ elk_stack_version }}-x86_64.rpm"
+        url: "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{ elk_stack_version }}-amd64.deb"
+        dest: "/tmp/elasticsearch-{{ elk_stack_version }}-amd64.deb"
       register: download_elastic
       until: download_elastic is succeeded
     - name: Install Elasticsearch
       become: true
-      yum:
-        name: "/tmp/elasticsearch-{{ elk_stack_version }}-x86_64.rpm"
+      apt:
+        deb: "/tmp/elasticsearch-{{ elk_stack_version }}-amd64.deb"
         state: present
     - name: Configure Elasticsearch
       become: true
       template:
         src: elasticsearch.yml.j2
         dest: /etc/elasticsearch/elasticsearch.yml
+        mode: '0755'
       notify: restart Elasticsearch
