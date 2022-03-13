@@ -1,0 +1,8 @@
+---
+    - name: Loads the Kibana dashboards
+      become: true
+      command:
+        cmd: filebeat setup
+      register: filebeat_setup
+      changed_when: false
+      until: filebeat_setup is succeeded

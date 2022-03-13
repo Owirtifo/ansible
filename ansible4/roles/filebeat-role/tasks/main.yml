@@ -1,0 +1,13 @@
+---
+- import_tasks: precheck.yml
+- name: Check files directory exists
+  file:
+    name: files/
+    state: directory
+  run_once: true
+  delegate_to: localhost
+- include_tasks: download.yml
+- include_tasks: install.yml
+- import_tasks: configure.yml
+- import_tasks: module.yml
+- import_tasks: dashboard.yml

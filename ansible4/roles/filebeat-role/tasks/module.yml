@@ -1,0 +1,7 @@
+---
+    - name: Enable the system module
+      become: true
+      command:
+        cmd: filebeat modules enable system
+      register: filebeat_module
+      changed_when: filebeat_module.stdout != 'Module system is already enabled'

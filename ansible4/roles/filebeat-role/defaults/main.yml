@@ -1,0 +1,3 @@
+---
+filebeat_version: "{{ elk_stack_version }}"
+filebeat_install_type: remote
