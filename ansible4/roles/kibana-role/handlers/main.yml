@@ -2,6 +2,5 @@
 - name: restart Kibana
   become: true
   service:
-    name: Kibana
+    name: kibana
     state: restarted
-  when: ansible_virtualization_type != 'docker'
