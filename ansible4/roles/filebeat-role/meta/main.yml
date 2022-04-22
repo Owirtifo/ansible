@@ -2,7 +2,8 @@ galaxy_info:
   author: Aleksandr Frolov
   description: Ansible homework 8.4
   company: Netology
-  role_name: filebeat-role
+  role_name: filebeat
+  namespace: netology
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value

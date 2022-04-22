@@ -1,3 +1,5 @@
 ---
-filebeat_version: "{{ elk_stack_version }}"
+filebeat_version: "7.14.0"
 filebeat_install_type: remote
+elastic_ip: "10.10.20.19"
+kibana_ip: 10.10.20.20

@@ -1,0 +1,19 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: checking service status
+      shell: /etc/init.d/kibana status
+      changed_when: false
+      register: kibana
+    - name: Verify running Kibana
+      fail:
+        msg: "Kibana is not running"
+      when: kibana.stdout != "kibana is running"
+    - name: Example assertion
+      assert:
+        that: true
+

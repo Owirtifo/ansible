@@ -1,6 +1,5 @@
 ---
 - name: restart Kibana
   become: true
-  service:
-    name: kibana
-    state: restarted
+  command: /etc/init.d/kibana restart
+

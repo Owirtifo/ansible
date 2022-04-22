@@ -1,3 +1,4 @@
 ---
-kibana_version: "{{ elk_stack_version }}"
+kibana_version: "7.14.0"
 kibana_install_type: remote
+elastic_ip: "10.10.20.19"

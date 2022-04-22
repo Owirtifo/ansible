@@ -3,12 +3,10 @@
   hosts: elasticsearch
   roles: 
     - elastic
-
 - name: Install Kibana
   hosts: kbn
   roles:
     - role: kibana-role
-
 - name: Install Filebeat
   hosts: flbt
   roles:

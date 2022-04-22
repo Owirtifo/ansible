@@ -1,0 +1,17 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Checking service status
+      service_facts:
+    - name: Verify running Filebeat
+      fail:
+        msg: " {{ ansible_facts.services['filebeat.service']['name'] }} is not running"
+      when: ansible_facts.services['filebeat.service']['state'] != "running"
+    - name: Example assertion
+      assert:
+        that: true
+

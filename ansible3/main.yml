@@ -1,0 +1,27 @@
+---
+- name: Install Elasticsearch
+  hosts: elasticsearch
+  tasks:
+    - name: Test
+      debug:
+        var: hostvars.elastic.ansible_facts.default_ipv4.address
+- name: Install Kibana
+  hosts: kbn
+  tasks:
+    - name: collect facts about system services
+      service_facts:
+#      register: kibana 
+    - name: Debug
+      debug:
+        var: ansible_facts[0]
+#    - name: Fail 
+#      fail:
+#        msg: "{{ ansible_facts.services.kibana.name }} is not running"
+#      when: ansible_facts.services.kibana.state != "running"
+#- name: Install Kibana
+#  hosts: flbt
+#  tasks:
+#     - name: restart Filebeat
+#       become: true
+#       command: /etc/init.d/filebeat restart
+  
