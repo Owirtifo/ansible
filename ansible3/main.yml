@@ -13,7 +13,7 @@
 #      register: kibana 
     - name: Debug
       debug:
-        var: ansible_facts[0]
+        var: ansible_facts.services.kibana
 #    - name: Fail 
 #      fail:
 #        msg: "{{ ansible_facts.services.kibana.name }} is not running"

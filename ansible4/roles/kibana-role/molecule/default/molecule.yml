@@ -12,5 +12,9 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
+  inventory:
+    group_vars:
+      all:
+        elastic_ip: "10.10.20.19"
 verifier:
   name: ansible

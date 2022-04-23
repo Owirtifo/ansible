@@ -3,7 +3,7 @@
 
 - name: Verify
   hosts: all
-  gather_facts: false
+  gather_facts: true
   tasks:
     - name: checking service status
       shell: /etc/init.d/kibana status
@@ -13,6 +13,10 @@
       fail:
         msg: "Kibana is not running"
       when: kibana.stdout != "kibana is running"
+    - name: Verify Access URI
+      uri:
+       url: http://{{ ansible_facts.default_ipv4.address }}:5601
+      when: ansible_virtualization_type != "docker" or (ansible_virtualization_type != "docker" and ansible_distribution == "CentOS")
     - name: Example assertion
       assert:
         that: true
