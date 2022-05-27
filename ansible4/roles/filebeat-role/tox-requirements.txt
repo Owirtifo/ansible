@@ -1,7 +1,8 @@
 molecule==3.4.0
-molecule_docker
 molecule_podman==0.3.0
-docker
 podman
+selinux
 ansible-lint
 yamllint
+six
+urllib3
