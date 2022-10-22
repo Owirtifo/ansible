@@ -5,9 +5,4 @@
     name: "/tmp/filebeat-{{ filebeat_version }}-x86_64.rpm"
     state: present
   notify: restart Filebeat
-- name: Debug
-  debug:
-    var: ansible_virtualization_type
-- name: Debug1
-  debug:
-    var: ansible_distribution
+
