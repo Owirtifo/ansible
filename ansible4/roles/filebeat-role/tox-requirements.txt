@@ -1,8 +1,7 @@
-molecule==3.4.0
-molecule_podman==0.3.0
-podman
 selinux
-ansible-lint
-yamllint
-six
-urllib3
+ansible-lint==5.1.3
+yamllint==1.26.3
+lxml
+molecule==3.4.0
+molecule_podman
+jmespath
