@@ -1,4 +1,4 @@
- cat roles/kibana-role/molecule/easy/molecule.yml
+---
 dependency:
   name: galaxy
 driver:
